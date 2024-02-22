@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class ShotCollisionControl : MonoBehaviour
 {
-    public Timer Point;
+    public Timer Timer;
     // Start is called before the first frame update
     void Start()
     {
-        Point = GameObject.Find("Manager").GetComponent<Timer>();//find cript on manager
+        Timer = GameObject.Find("Manager").GetComponent<Timer>();//find cript on manager
     }
 
     // Update is called once per frame
@@ -18,12 +18,12 @@ public class ShotCollisionControl : MonoBehaviour
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("hit");
+        //Debug.Log("hit");
         gameObject.GetComponent<ShotMove>().enabled = false;
          if (gameObject.tag == collision.gameObject.tag)
          {
             Destroy(gameObject);
-            Point.TimeLeft = Point.TimeLeft + 1;
+            Timer.TimeLeft = Timer.TimeLeft + 1;
          }
     }
 }

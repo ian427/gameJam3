@@ -7,10 +7,10 @@ public class Timer : MonoBehaviour
 {
     public bool Clock;
     public float TimeLeft;
-
+    public fadeeffect Fade;
     public Text txtTime;
     public int timer = 500;
-
+    private bool CanEnd = false;
 
 
 
@@ -18,6 +18,8 @@ public class Timer : MonoBehaviour
     void Start()
     {
         TimeLeft = timer;
+        Clock = true;
+        Fade = GameObject.Find("fade").GetComponent<fadeeffect>();
 
 
     }
@@ -35,7 +37,14 @@ public class Timer : MonoBehaviour
         }
         if (TimeLeft == 0)
         {
-            //death sequince here
+            if (CanEnd == true)
+            {
+              CanEnd = false;
+              Fade.StartEnd = true;
+            }
+            
+
+            
         }
     }
     private IEnumerator OxGodown()
