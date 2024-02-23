@@ -1,11 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class fadeeffect : MonoBehaviour
+public class fadein : MonoBehaviour
 {
-    
     public float FadeDelay = 1f;
     public float AlphaValue = 0;
     public bool StartEnd = false;
@@ -21,8 +19,8 @@ public class fadeeffect : MonoBehaviour
     {
         if (StartEnd == true)
         {
-           StopEnd = true;
-           StartCoroutine(FadeTo(AlphaValue, FadeDelay));
+            StopEnd = true;
+            StartCoroutine(FadeTo(AlphaValue, FadeDelay));
             Debug.Log("starting");
         }
         if (StopEnd == true)
@@ -32,7 +30,7 @@ public class fadeeffect : MonoBehaviour
 
     }
 
-   
+
 
     private IEnumerator FadeTo(float aValue, float FadeTime)
     {
@@ -42,12 +40,10 @@ public class fadeeffect : MonoBehaviour
 
             Color NewColor = new Color(SpriteRenderer.color.r, SpriteRenderer.color.g, SpriteRenderer.color.b, Mathf.Lerp(alpha, aValue, t));
             SpriteRenderer.color = NewColor;
-            //yield return null;
-            
-           
+            yield return null;
+
+
         }
-        yield return new WaitForSeconds(6);
-       
-         SceneManager.LoadScene("Game");
     }
+
 }
