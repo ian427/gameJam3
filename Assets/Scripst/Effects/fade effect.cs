@@ -23,13 +23,13 @@ public class fadeeffect : MonoBehaviour
         {
            StopEnd = true;
            StartCoroutine(FadeTo(AlphaValue, FadeDelay));
-            Debug.Log("starting");
+           // Debug.Log("starting");
         }
         if (StopEnd == true)
         {
             StartEnd = false;
         }
-
+      
     }
 
    
@@ -37,17 +37,21 @@ public class fadeeffect : MonoBehaviour
     private IEnumerator FadeTo(float aValue, float FadeTime)
     {
         float alpha = SpriteRenderer.color.a;
-        for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / FadeTime)
-        {
-
+        for (float t = 0.0f; t < 0.004f; t += Time.deltaTime / FadeTime)
+        { 
+            Debug.Log(t);
+         
             Color NewColor = new Color(SpriteRenderer.color.r, SpriteRenderer.color.g, SpriteRenderer.color.b, Mathf.Lerp(alpha, aValue, t));
             SpriteRenderer.color = NewColor;
             //yield return null;
-            
-           
+
+            yield return null;
         }
-        yield return new WaitForSeconds(6);
+        Debug.Log("breakout");
+                 SceneManager.LoadScene("Game");
+
+
+
        
-         SceneManager.LoadScene("Game");
     }
 }
