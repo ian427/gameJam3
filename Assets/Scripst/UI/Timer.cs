@@ -39,8 +39,9 @@ public class Timer : MonoBehaviour
         {
             if (CanEnd == true)
             {
-              CanEnd = false;
-              Fade.StartEnd = true;
+             
+                Fade.StartEnd = true; 
+                CanEnd = false;
             }
             
 
