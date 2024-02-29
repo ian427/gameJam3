@@ -22,7 +22,8 @@ public class fadeeffect : MonoBehaviour
         if (StartEnd == true)
         {
            StopEnd = true;
-           StartCoroutine(FadeTo(AlphaValue, FadeDelay));
+           
+            StartCoroutine(FadeTo(AlphaValue, FadeDelay));
            // Debug.Log("starting");
         }
         if (StopEnd == true)
@@ -39,7 +40,7 @@ public class fadeeffect : MonoBehaviour
         float alpha = SpriteRenderer.color.a;
         for (float t = 0.0f; t < 0.004f; t += Time.deltaTime / FadeTime)
         { 
-            Debug.Log(t);
+            //Debug.Log(t);
          
             Color NewColor = new Color(SpriteRenderer.color.r, SpriteRenderer.color.g, SpriteRenderer.color.b, Mathf.Lerp(alpha, aValue, t));
             SpriteRenderer.color = NewColor;
@@ -47,7 +48,7 @@ public class fadeeffect : MonoBehaviour
 
             yield return null;
         }
-        Debug.Log("breakout");
+       // Debug.Log("breakout");
                  SceneManager.LoadScene("Game");
 
 

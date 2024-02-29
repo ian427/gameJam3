@@ -41,6 +41,7 @@ public class Cull : MonoBehaviour
         yield return new WaitForSeconds(0.6f);
         if (OverFlowed== true)
         {
+            GameObject.Find("PlayerCannon").GetComponent<PlayerMovment>().enabled = false;
             CanEnd = true;
             Fade.StartEnd = true;
 

@@ -9,8 +9,8 @@ public class Timer : MonoBehaviour
     public float TimeLeft;
     public fadeeffect Fade;
     public Text txtTime;
-    public int timer = 500;
-    private bool CanEnd = false;
+    public int timer = 5;//starting time
+    private bool CanEnd = true;
 
 
 
@@ -35,11 +35,15 @@ public class Timer : MonoBehaviour
 
             Clock = false;
         }
-        if (TimeLeft == 0)
+        if ((TimeLeft == 0)||(TimeLeft <= 0))
         {
+            TimeLeft = 1;
+            Clock = false;
+            
             if (CanEnd == true)
             {
-             
+                //Debug.Log("fadeing");
+                GameObject.Find("PlayerCannon").GetComponent<PlayerMovment>().enabled = false;
                 Fade.StartEnd = true; 
                 CanEnd = false;
             }

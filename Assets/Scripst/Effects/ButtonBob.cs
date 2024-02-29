@@ -20,15 +20,17 @@ public class ButtonBob : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       //OnPointerEnter();
+       
     }
     public void OnPointerEnter()
     {
-        if (CanRun == true)
-        {
-            StartCoroutine(ScaleObject());
-            CanRun = false;
-        }
+        CanRun = true;
+        StartCoroutine(ScaleObject());
+    }
+    public void OnPointerExit()
+    {
+        CanRun = false;
+        //Debug.Log("exit");
     }
 
     IEnumerator ScaleObject()
@@ -37,16 +39,20 @@ public class ButtonBob : MonoBehaviour
         {
             transform.localScale += Scaleup;
             yield return new WaitForSeconds(delayBetweenScales);
-            Debug.Log("out");
+           // Debug.Log("out");
         }
 
         for (int i = 0; i < 27; i++)
         {
             transform.localScale -= Scaleup;
             yield return new WaitForSeconds(delayBetweenScales);
-            Debug.Log("in");
+            //Debug.Log("in");
         }
-        CanRun = true;
+         if (CanRun == true)
+        {
+            StartCoroutine(ScaleObject());
+
+        }
     }
 }
 

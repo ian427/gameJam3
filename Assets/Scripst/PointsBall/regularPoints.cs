@@ -23,7 +23,7 @@ public class regularPoints : MonoBehaviour
         if (gameObject.tag == collision.gameObject.tag)
         {
 
-            Points.score += 5;
+            Points.score += 2;
         }
     }
 }

@@ -23,7 +23,7 @@ public class ShotCollisionControl : MonoBehaviour
          if (gameObject.tag == collision.gameObject.tag)
          {
             Destroy(gameObject);
-            Timer.TimeLeft = Timer.TimeLeft + 1;
+            Timer.TimeLeft = Timer.TimeLeft += 1;
          }
     }
 }

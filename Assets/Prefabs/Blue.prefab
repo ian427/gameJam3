@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2811750181859027730}
   - component: {fileID: 3388090191883956423}
   - component: {fileID: 3426598384002680715}
+  - component: {fileID: 1464251824783532041}
   m_Layer: 0
   m_Name: Blue
   m_TagString: Blue
@@ -112,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb3687d0e7169704581346e76698e0ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Point: {fileID: 0}
+  Timer: {fileID: 0}
 --- !u!58 &3388090191883956423
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -175,3 +176,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1464251824783532041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232352830806556628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dada06788d1b0949ad2591e902c5364, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Points: {fileID: 0}
