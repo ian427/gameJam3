@@ -6,29 +6,15 @@ public class fadein : MonoBehaviour
 {
     public float FadeDelay = 1f;
     public float AlphaValue = 0;
-    public bool StartEnd = false;
-    private bool StopEnd = false;
+  
     SpriteRenderer SpriteRenderer;
     // Start is called before the first frame update
     void Start()
     {
         SpriteRenderer = GetComponent<SpriteRenderer>();
-
+        StartCoroutine(FadeTo(AlphaValue, FadeDelay));
     }
-    private void Update()
-    {
-        if (StartEnd == true)
-        {
-            StopEnd = true;
-            StartCoroutine(FadeTo(AlphaValue, FadeDelay));
-            Debug.Log("starting");
-        }
-        if (StopEnd == true)
-        {
-            StartEnd = false;
-        }
-
-    }
+   
 
 
 

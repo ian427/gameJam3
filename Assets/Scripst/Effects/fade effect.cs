@@ -49,7 +49,7 @@ public class fadeeffect : MonoBehaviour
             yield return null;
         }
        // Debug.Log("breakout");
-                 SceneManager.LoadScene("Game");
+                 SceneManager.LoadScene("Endscreen");
 
 
 
