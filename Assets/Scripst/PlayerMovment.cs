@@ -7,6 +7,7 @@ public class PlayerMovment : MonoBehaviour
     private float movementSpeed = 3;
     public DisplayWindow Display;
     public bool FireControl = true;
+    public AudioSource cannonFire;
 
     void Start()
     {
@@ -30,7 +31,7 @@ public class PlayerMovment : MonoBehaviour
         }
         else if(Input.GetKey(KeyCode.Space)&&(FireControl == true))
         {
-           
+            cannonFire.Play();
             Display.CanSpawn = true;
             GameObject Shot = Display.Tempbullet  ;
             GameObject TempShot = Instantiate(Shot); 

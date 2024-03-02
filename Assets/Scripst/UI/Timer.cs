@@ -11,7 +11,7 @@ public class Timer : MonoBehaviour
     public Text txtTime;
     public int timer = 5;//starting time
     private bool CanEnd = true;
-
+    public AudioSource matchSound;
 
 
     // Start is called before the first frame update

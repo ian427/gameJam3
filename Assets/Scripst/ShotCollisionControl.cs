@@ -22,6 +22,7 @@ public class ShotCollisionControl : MonoBehaviour
         gameObject.GetComponent<ShotMove>().enabled = false;
          if (gameObject.tag == collision.gameObject.tag)
          {
+            Timer.matchSound.Play();
             Destroy(gameObject);
             Timer.TimeLeft = Timer.TimeLeft += 1;
          }
